@@ -337,105 +337,157 @@ background-color: #7B4F26;
     right: 10px;
   }
 
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    overflow-y: auto;
-    padding: 20px;
-  }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+    }
 
-  .modal-content {
-    background: #fff8f2;
-    width: 100%;
-    max-width: 900px;
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(92, 59, 40, 0.3);
-  }
+    .modal-content {
+      background: linear-gradient(135deg, #a97142, #855c3b);
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: #a83232;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 10;
-  }
+    .modal-content::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      top: -100px;
+      right: -100px;
+      z-index: 0;
+    }
 
-  .redesign-modal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+    .modal-text, .modal-images {
+      flex: 1 1 300px;
+      z-index: 1;
+    }
 
-  .modal-text {
-    flex: 1;
-    background: #6c4b3c;
-    border-radius: 12px;
-    padding: 20px;
-    color: #fffaf3;
-  }
+    .modal-text {
+      padding-right: 20px;
+    }
 
-  .modal-text h2 {
-    font-size: 24px;
-    color: #fbe9d0;
-  }
+    .price-box {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      background: #a97142;
+      padding: 12px 18px;
+      border:3px solid white;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .info-box {
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      background: #a97142;
+      padding: 12px 18px;
+      border:3px solid white;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-  .modal-text h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #ffddb0;
-  }
+    .modal-text h2 {
+      font-size: 28px;
+      margin-bottom: 5px;
+      color: #fff;
+    }
 
-  .modal-text .price-box {
-    background: #A97142;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
+    .modal-text h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #fbe9d0;
+    }
 
-  .modal-text .details p {
-    margin: 8px 0;
-    font-size: 14px;
-  }
+    .modal-text .description {
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #fff9ed;
+    }
 
-  .modal-images {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-  }
+    .modal-text .details p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
 
-  .modal-images img {
-    border-radius: 50%;
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border: 3px solid #fff;
-    background-color: #f8f4ef;
-  }
+    .modal-text i {
+      margin-right: 10px;
+    }
+
+    .modal-images {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-images .circle-image {
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #fff;
+      width: 110px;
+      height: 110px;
+      background-color: #f8f4ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 2;
+    }
+.modal-header-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modal-header-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
   @media (max-width: 768px) {
+    .modal{
+      align-items: flex-start;
+      overflow-y: auto;
+    }
     .modal-content {
       padding: 15px;
     }
@@ -484,8 +536,8 @@ background-color: #7B4F26;
 
   <div class="hero-image">
     <div class="hero-image-content">
-      <button class="view-btn">View More</button>
-      <p>www.knowyourdorm.com</p>
+      <button class="view-btn"><a href="https://ggugu.my.canva.site/studio-type-apartment">View More</a></button>
+      <p>https://ggugu.my.canva.site/studio-type-apartment</p>
     </div>
   </div>
 
@@ -496,15 +548,14 @@ background-color: #7B4F26;
     <button class="nav-btn nav-right" onclick="scrollCards(1)">&#8250;</button>
   </section>
 
-  <div class="modal" id="homeModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">×</button>
-      <div class="redesign-modal">
-        <div class="modal-text" id="modalText"></div>
-        <div class="modal-images" id="modalImages"></div>
-      </div>
-    </div>
+<div id="homeModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-header-image" id="modalHeaderImage"></div>
+    <div class="modal-text" id="modalText"></div>
+    <div class="modal-images" id="modalImages"></div>
   </div>
+</div>
 
 <script>
   const homes = [
@@ -521,7 +572,7 @@ background-color: #7B4F26;
   {
     title: 'Mayao Parada',
     cover: 'img/mmg.jpg',
-    images: ['img/mmg1.jpg', 'img/mmg2.jpg', 'img/mmg3.jpg'],
+    images: ['img/mmg3.jpg', 'img/mmg2.jpg', 'img/mmg1.jpg'],
     address: 'Quezon, Lucena City, Brgy. Mayao Parada (near Cefi, MMG Hospital)',
     rooms: '1 studio type room good for 1 - 2 persons',
     price: '4,000 pesos monthly',
@@ -724,23 +775,39 @@ images: ['img/nan1.jpg', 'img/nan2.jpg', 'img/nan3.jpg'],
 }
 ];
 
-  function openModal(index) {
-    const home = homes[index];
-    document.getElementById("modalText").innerHTML = `
-      <div class="price-box">OFFERED AT ${home.price.toUpperCase()}</div>
-      <h2>Interior Design</h2>
-      <h3>Services</h3>
-      <p>Experience the difference with our professional interior design services, where creativity meets functionality to create spaces that inspire and delight.</p>
-      <div class="details">
-        <p><i class="fas fa-map-marker-alt"></i> ${home.address}</p>
-        <p><i class="fas fa-road"></i> ${home.distance}</p>
-        <p><i class="fas fa-bed"></i> ${home.rooms}</p>
-        <p><i class="fas fa-phone-alt"></i> ${home.social}</p>
-      </div>
-    `;
-    document.getElementById("modalImages").innerHTML = home.images.map(img => `<img src="${img}" alt="photo">`).join('');
-    document.getElementById("homeModal").style.display = "flex";
-  }
+function openModal(index) {
+  const home = homes[index];
+
+  document.getElementById("modalHeaderImage").innerHTML = `
+    <img src="${home.images[0]}" alt="Header Image">
+  `;
+
+  document.getElementById("modalText").innerHTML = `
+    <div class="price-box">OFFERED AT ${home.price.toUpperCase()}</div>
+    <h2>Interior Design</h2>
+    <h3>Services</h3>
+    <p class="description">
+      Experience the difference with our professional interior design services, 
+      where creativity meets functionality to create spaces that inspire and delight.
+    </p>
+    
+    <div class="details">
+    <div class="info-box">Information:</div>
+      <p><i class="fas fa-map-marker-alt"></i> ${home.address}</p>
+      <p><i class="fas fa-road"></i> ${home.distance}</p>
+      <p><i class="fas fa-bed"></i> ${home.rooms}</p>
+      <p><i class="${/^\d/.test(home.social) ? 'fas fa-phone-alt' : 'fab fa-facebook'}"></i> ${home.social}</p>
+    </div>
+  `;
+
+  document.getElementById("modalImages").innerHTML = home.images.map(img => `
+    <div class="circle-image">
+      <img src="${img}" alt="photo">
+    </div>
+  `).join('');
+
+  document.getElementById("homeModal").style.display = "flex";
+}
 
   function closeModal() {
     document.getElementById("homeModal").style.display = "none";
